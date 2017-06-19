@@ -13,11 +13,11 @@ function Assert() {
     return (assertion + " is false");
   };
 
-  this.isEqual = function(itemOne, itemTwo) {
-    if (itemOne !== itemTwo ) {
-      throw new Error("Expected " + itemOne + " to be Equal to " + itemTwo + "." );
+  this.isEqual = function(testSubject, expectedResult) {
+    if (testSubject !== expectedResult ) {
+      throw new Error("Expected " + testSubject + " to be Equal to " + expectedResult + "." );
     }
-    return (itemOne + " is Equal to " + itemTwo);
+    return (testSubject + " is Equal to " + expectedResult);
   };
 }
 
