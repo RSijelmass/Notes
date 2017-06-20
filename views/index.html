@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Notes</title>
 
+
     <!-- Test Framework -->
     <script type="text/javascript" src="../spec/assert.js"></script>
 
@@ -13,14 +14,15 @@
     <!-- Tests -->
     <script type="text/javascript" src="../spec/noteSpec.js"></script>
 
+
   </head>
   <body>
     <h1>Notes  |  Team Barefoot</h1>
     <section id="new-note">
       <textarea name="new-note" rows="16" cols="80" placeholder="Type your note here"></textarea></br>
-      <button type="button" name="create-note">Add note</button>
+      <button type="button" id='add-note' name="create-note">Add note</button>
     </section>
-    <section id="note-list">
+    <section id="notelist">
       <ul id="notes">
         <li>Here's a hard-coded note</li>
       </ul>
