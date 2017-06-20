@@ -3,11 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('add-note').onclick = function() {
 		var newNote = new Note()
 		addTextToNote(newNote);
-		var notesList = document.getElementById('notes');
-		var note = document.createElement('li');
-		note.innerHTML = newNote.text;
-
-		notesList.appendChild(note);
+		addChildParentRelation(newNote)
 		document.getElementById('new-note-text').value = '';
 	};
 
@@ -16,4 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		note.text = noteText;
 	};
 
+	addChildParentRelation = function(newNote) {
+		var ParentNotesList = document.getElementById('notes');
+		var ChildNote = document.createElement('li');
+		ChildNote.innerHTML = newNote.text;
+
+		ParentNotesList.appendChild(ChildNote);
+	}
 });
