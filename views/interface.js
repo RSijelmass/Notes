@@ -15,8 +15,14 @@ document.addEventListener('DOMContentLoaded', function() {
 	addChildParentRelation = function(newNote) {
 		var ParentNotesList = document.getElementById('notes');
 		var ChildNote = document.createElement('li');
-		ChildNote.innerHTML = newNote.text;
-
+		ChildNote.innerHTML = isNoteTooLong(newNote)
 		ParentNotesList.appendChild(ChildNote);
+	}
+
+	isNoteTooLong = function(newNote) {
+		if (newNote.text.length > 20) {
+			return newNote.abbreviate() + '...';
+		}
+		return newNote.text
 	}
 });
