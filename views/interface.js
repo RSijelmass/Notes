@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		note.innerHTML = newNote.text;
 
 		notesList.appendChild(note);
+		document.getElementById('new-note-text').value = '';
 	};
 
 	addTextToNote = function(note) {
