@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		note.innerHTML = 'Test Note';
 
 		notesList.appendChild(note);
-		//	document.ul.appendChild(document.createElement('li'));
 	};
 
 });
