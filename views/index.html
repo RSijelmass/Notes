@@ -7,15 +7,16 @@
     <script type="text/javascript" src="../spec/createNotesTest.js"></script>
     <script type="text/javascript" src="../src/notes.js"></script>
     <script src="../spec/assert.js"></script>
+		<script src='./interface.js'></script>
 
   </head>
   <body>
     <h1>Notes  |  Team Barefoot</h1>
     <section id="new-note">
       <textarea name="new-note" rows="16" cols="80" placeholder="Type your note here"></textarea></br>
-      <button type="button" name="create-note">Add note</button>
+      <button type="button" id='add-note' name="create-note">Add note</button>
     </section>
-    <section id="note-list">
+    <section id="notelist">
       <ul id="notes">
         <li>Here's a hard-coded note</li>
       </ul>
