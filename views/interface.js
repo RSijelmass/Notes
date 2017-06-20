@@ -1,12 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
 
 	document.getElementById('add-note').onclick = function() {
-		var notesList = document.getElementById('notes');
-		var note = document.createElement('li');
-		note.innerHTML = 'Test Note';
-
-		notesList.appendChild(note);
-		//	document.ul.appendChild(document.createElement('li'));
+		var newNote = new Note()
+		addTextToNote(newNote);
+		addChildParentRelation(newNote)
+		document.getElementById('new-note-text').value = '';
 	};
 
+	addTextToNote = function(note) {
+		var noteText = document.getElementById('new-note-text').value
+		note.text = noteText;
+	};
+
+	addChildParentRelation = function(newNote) {
+		var ParentNotesList = document.getElementById('notes');
+		var ChildNote = document.createElement('li');
+		ChildNote.innerHTML = newNote.text;
+
+		ParentNotesList.appendChild(ChildNote);
+	}
 });
