@@ -16,8 +16,16 @@
     assert.hasContent('notes', "Team Barefoot, we pu...");
   }
 
+
+  function onlyAddNoteWhenNotEmpty() {
+    document.getElementById('new-note-text').value = '';
+    document.getElementById('add-note').click();
+    assert.isFalse(assert.hasContent(''));
+  };
+
   function runFeatureTests() {
     createNewNote();
     displayAbbreviatedNote();
+    onlyAddNoteWhenNotEmpty();
     console.log('Feature Tests Passed | Team BearFoot!');
   }
