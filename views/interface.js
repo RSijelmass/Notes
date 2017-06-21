@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
 		addTextToNote(newNote);
 
 		var noteComponent = new NoteComponent(newNote);
-		renderNote(newNote, noteComponent)	
+		renderNote(newNote, noteComponent)
 
-		document.getElementById('new-note-text').value = '';
+		emptyTextArea()
 	};
 
 	addTextToNote = function(newNote) {
@@ -15,9 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
 	};
 
 	renderNote = function(newNote, noteComponent) {
-		if (newNote.text.length != 0) {
+		if (newNote.text.length !== 0) {
 			noteComponent.render();
 		}
 	}
+
+	emptyTextArea = function() {
+		document.getElementById('new-note-text').value = '';
+	};
 
 });

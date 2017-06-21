@@ -26,8 +26,6 @@
 
 	function expandNote() {
 		var message = "Another Message, full of beary text. So much hair. Hair everywhere.";
-		var messageShort = message.slice(0, 20);
-
     document.getElementById('new-note-text').value = message;
     document.getElementById('add-note').click();
     var lis = document.getElementsByTagName('li')
