@@ -14,6 +14,7 @@ function abbreviateNote() {
 };
 
 function runUnitTests() {
+  noteComponentHasNote();
   addNoteText();
   abbreviateNote();
   console.log('Tests Passed | Team BearFoot!');
