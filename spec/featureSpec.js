@@ -16,11 +16,11 @@
     assert.hasContent('notes', "Team Barefoot, we pu...");
   }
 
-
   function onlyAddNoteWhenNotEmpty() {
     document.getElementById('new-note-text').value = '';
     document.getElementById('add-note').click();
-    assert.isFalse(assert.hasContent(''));
+    var numberOfListElements = document.getElementsByTagName('li').length;
+    assert.isFalse(numberOfListElements === 3);
   };
 
   function runFeatureTests() {

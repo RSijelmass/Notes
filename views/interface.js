@@ -3,13 +3,15 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('add-note').onclick = function() {
 		var newNote = new Note()
 		addTextToNote(newNote);
-		addChildParentRelation(newNote)
 		document.getElementById('new-note-text').value = '';
 	};
 
-	addTextToNote = function(note) {
+	addTextToNote = function(newNote) {
 		var noteText = document.getElementById('new-note-text').value
-		note.text = noteText;
+		newNote.text = noteText;
+		if (noteText.length != 0) {
+			addChildParentRelation(newNote);
+		}
 	};
 
 	addChildParentRelation = function(newNote) {
