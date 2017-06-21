@@ -17,10 +17,11 @@
   }
 
   function onlyAddNoteWhenNotEmpty() {
+    var listLengthBefore = document.getElementsByTagName('li').length;
     document.getElementById('new-note-text').value = '';
     document.getElementById('add-note').click();
-    var numberOfListElements = document.getElementsByTagName('li').length;
-    assert.isFalse(numberOfListElements === 3);
+    var listLengthAfter = document.getElementsByTagName('li').length;
+    assert.isEqual(listLengthBefore, listLengthAfter);
   };
 
   function runFeatureTests() {
