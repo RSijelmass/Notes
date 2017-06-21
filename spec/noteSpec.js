@@ -10,10 +10,11 @@ function addNoteText() {
 
 function abbreviateNote() {
   note.text = "Such an exciting new note that we have here!";
-  assert.isEqual(note.abbreviate(), "Such an exciting new");
+  assert.isEqual(note.abbreviate(), "Such an exciting new...");
 };
 
 function runUnitTests() {
+  noteComponentHasNote();
   addNoteText();
   abbreviateNote();
   console.log('Tests Passed | Team BearFoot!');
