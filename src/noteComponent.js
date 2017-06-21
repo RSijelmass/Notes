@@ -7,8 +7,10 @@ function NoteComponent(note) {
 
 	this.setup = function() {
 		var el = document.createElement('li');
-		el.innerHTML = note.abbreviate();	
-		//add Event Listener to each note
+		el.innerHTML = note.abbreviate();
+		el.addEventListener("click", function() {
+      document.getElementById('long-note').innerHTML = note.text
+    });
 		return el;
 	};
 
@@ -17,5 +19,5 @@ function NoteComponent(note) {
 		var list = document.getElementById('notes');
 		list.appendChild(el);
 	};
-		
+
 }
