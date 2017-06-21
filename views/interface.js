@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('add-note').onclick = function() {
 		var newNote = new Note()
 		addTextToNote(newNote);
-		addChildParentRelation(newNote)
 		document.getElementById('new-note-text').value = '';
 	};
 
@@ -21,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		function bubble() {
 			console.log('bubble :' + this.firstChild.nodeValue.trim());
 		};
-		
+
 		for(var i=0; i < notes.length; i++) {
 			notes[i].addEventListener('click', capture, true);
 			notes[i].addEventListener('click', bubble, false);
@@ -30,16 +29,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	clickNotes();
 
-	addTextToNote = function(note) {
+	addTextToNote = function(newNote) {
 		var noteText = document.getElementById('new-note-text').value
-		note.text = noteText;
+		newNote.text = noteText;
+		if (noteText.length != 0) {
+			addChildParentRelation(newNote);
+		}
 	};
 
 	addChildParentRelation = function(newNote) {
 		var ParentNotesList = document.getElementById('notes');
 		var ChildNote = document.createElement('li');
-		ChildNote.innerHTML = newNote.text;
-
+		ChildNote.innerHTML = checkNoteTooLong(newNote)
 		ParentNotesList.appendChild(ChildNote);
+	}
+
+	checkNoteTooLong = function(newNote) {
+		if (newNote.text.length > 20) {
+			return newNote.abbreviate() + '...';
+		}
+		return newNote.text
 	}
 });
