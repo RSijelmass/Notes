@@ -5,7 +5,7 @@ A simple one-page notes app where one can save all their thoughts and ideas for 
 If one would like to see what a previous note entailed, one only has to click on the abbreviated text and the note is displayed.
 
 ### Technologies Used
-
+JavaScript
 
 ### Testing Framework
 The testing framework has been created from scratch [...].
