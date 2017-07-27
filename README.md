@@ -4,6 +4,10 @@ A simple one-page notes app where one can save all their thoughts and ideas for 
 
 If one would like to see what a previous note entailed, one only has to click on the abbreviated text and the note is displayed.
 
+### How to Run
+1. clone this repo
+2. run `open views/index.html` on the command line
+
 ### Technologies Used
 JavaScript
 
